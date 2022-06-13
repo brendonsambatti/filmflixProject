@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8p8-J7-W5y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ecb-la-P83">
+            <objects>
+                <viewController id="Gml-Ud-9AX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B9F-0e-M6x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ypm-Rz-Lfp"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" selectedImage="house.fill" id="huw-ej-5Gc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAo-Gs-oAA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162" y="-224"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="cbf-aH-EWN">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarController" id="8p8-J7-W5y" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="kxG-3X-UB6" customClass="CustomTabBar" customModule="ProjetoFilmes" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                        <color key="selectedImageTintColor" name="UserRed"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Gml-Ud-9AX" kind="relationship" relationship="viewControllers" id="zVz-4U-Bda"/>
+                        <segue destination="puO-na-xoL" kind="relationship" relationship="viewControllers" id="BNe-cL-hXX"/>
+                        <segue destination="h9Z-9B-JYN" kind="relationship" relationship="viewControllers" id="XZQ-G8-W9j"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AK2-Wc-V0C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-982" y="-224"/>
+        </scene>
+        <!--SearchScreen-->
+        <scene sceneID="x77-Dz-Oan">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchScreen" id="puO-na-xoL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" selectedImage="magnifyingglass" id="QtM-qQ-BiB"/>
+                    <navigationItem key="navigationItem" id="Lwz-DN-qOE"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="exV-Kr-t7h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1257" y="192"/>
+        </scene>
+        <!--FavoriteScreen-->
+        <scene sceneID="ox2-t0-vKb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FavoriteScreen" id="h9Z-9B-JYN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="star" catalog="system" selectedImage="star.fill" id="B6k-q3-HMy"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bUm-JP-MFw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-731" y="192"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <namedColor name="UserRed">
+            <color red="0.52821320299999996" green="0.1564585567" blue="0.1124333218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
