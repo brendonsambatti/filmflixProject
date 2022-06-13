@@ -129,7 +129,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxr-dg-PDN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="677" y="11"/>
+            <point key="canvasLocation" x="496" y="-110"/>
         </scene>
         <!--ForgotPasswordScreen-->
         <scene sceneID="scd-RK-a2a">
@@ -137,7 +137,7 @@
                 <viewControllerPlaceholder storyboardName="ForgotPasswordScreen" id="6d2-ai-MNc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5K-9E-Adq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="669" y="77"/>
+            <point key="canvasLocation" x="578" y="-48"/>
         </scene>
         <!--HomeScreen-->
         <scene sceneID="RUL-kR-wrI">
@@ -147,7 +147,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDH-G0-TWO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="643" y="137"/>
+            <point key="canvasLocation" x="486" y="15"/>
         </scene>
     </scenes>
     <resources>
