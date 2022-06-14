@@ -1,28 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8p8-J7-W5y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8p8-J7-W5y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home Screen View Controller-->
         <scene sceneID="ecb-la-P83">
             <objects>
-                <viewController id="Gml-Ud-9AX" sceneMemberID="viewController">
+                <viewController id="Gml-Ud-9AX" customClass="HomeScreenViewController" customModule="ProjetoFilmes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B9F-0e-M6x">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ieo-yy-16X">
+                                <rect key="frame" x="0.0" y="100" width="414" height="625"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaB-id-bif">
+                                <rect key="frame" x="110" y="38" width="102" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4V-vj-73e">
+                                <rect key="frame" x="20" y="10" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="62b-17-84t"/>
+                                    <constraint firstAttribute="width" constant="80" id="681-kV-5Qh"/>
+                                </constraints>
+                                <color key="tintColor" name="UserRed"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="person.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="60" scale="large"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ypm-Rz-Lfp"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DaB-id-bif" firstAttribute="centerY" secondItem="B4V-vj-73e" secondAttribute="centerY" id="CVf-ze-8Dl"/>
+                            <constraint firstItem="DaB-id-bif" firstAttribute="leading" secondItem="B4V-vj-73e" secondAttribute="trailing" constant="10" id="HtN-Td-ItV"/>
+                            <constraint firstItem="Ypm-Rz-Lfp" firstAttribute="bottom" secondItem="ieo-yy-16X" secondAttribute="bottom" id="OWb-Fh-z6p"/>
+                            <constraint firstItem="Ypm-Rz-Lfp" firstAttribute="trailing" secondItem="ieo-yy-16X" secondAttribute="trailing" id="cxP-TR-Uyu"/>
+                            <constraint firstItem="ieo-yy-16X" firstAttribute="leading" secondItem="Ypm-Rz-Lfp" secondAttribute="leading" id="gDv-91-Wyy"/>
+                            <constraint firstItem="B4V-vj-73e" firstAttribute="leading" secondItem="Ypm-Rz-Lfp" secondAttribute="leading" constant="20" id="tMX-e4-gmr"/>
+                            <constraint firstItem="ieo-yy-16X" firstAttribute="top" secondItem="Ypm-Rz-Lfp" secondAttribute="top" constant="100" id="tSh-ni-1Kc"/>
+                            <constraint firstItem="B4V-vj-73e" firstAttribute="top" secondItem="Ypm-Rz-Lfp" secondAttribute="top" constant="10" id="zYB-8N-FrT"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="house" catalog="system" selectedImage="house.fill" id="huw-ej-5Gc"/>
+                    <connections>
+                        <outlet property="tableView" destination="ieo-yy-16X" id="Sd2-3l-N3C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hAo-Gs-oAA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162" y="-224"/>
+            <point key="canvasLocation" x="-162.31884057971016" y="-224.33035714285714"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cbf-aH-EWN">
@@ -72,6 +111,7 @@
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="UserRed">
