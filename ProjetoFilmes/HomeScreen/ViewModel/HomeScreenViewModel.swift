@@ -8,31 +8,29 @@
 import Foundation
 import UIKit
 
-protocol HistoryViewModelDelegate:AnyObject{
-    func success()
-    func error()
-}
-
 class HomeScreenViewModel{
+    var adult:Bool?
+    var backdropPath:String?
+
+    private let service:HistoryService = HistoryService()
     
-    private weak var delegate:HistoryViewModelDelegate?
-    
-    public func delegate(delegate:HistoryViewModelDelegate?){
-        self.delegate = delegate
+    public func fetchHistory(){
+        self.service.getHistoryAlamofire { success, error in
+            print(success)
+            History.init(adult: self.adult, backdropPath: self.backdropPath, belongsToCollection: <#T##JSONNull?#>, budget: <#T##Int?#>, genres: <#T##[Genre]?#>, homepage: <#T##String?#>, id: <#T##Int?#>, imdbID: <#T##String?#>, originalLanguage: <#T##String?#>, originalTitle: <#T##String?#>, overview: <#T##String?#>, popularity: <#T##Double?#>, posterPath: <#T##String?#>, productionCompanies: <#T##[ProductionCompany]?#>, productionCountries: <#T##[ProductionCountry]?#>, releaseDate: <#T##String?#>, revenue: <#T##Int?#>, runtime: <#T##Int?#>, spokenLanguages: <#T##[SpokenLanguage]?#>, status: <#T##String?#>, tagline: <#T##String?#>, title: <#T##String?#>, video: <#T##Bool?#>, voteAverage: <#T##Double?#>, voteCount: <#T##Int?#>)
+        }
     }
     
-    private let service:MarvelApi = MarvelApi()
     
-//    var data:[History] = []
     
-    private var data:History?
-    
+    var data = ["", ""]
+        
     func appendData(){
         
     }
     
     public var numberOfRows:Int{
-        return data?.genres.count ?? 0
+        return data.count
     }
     
 //    public func cellForRow(indexPath:IndexPath)-> MarvelApi{
@@ -43,14 +41,5 @@ class HomeScreenViewModel{
     public var heightForRow:CGFloat{
         150
     }
-    public func fetchHistory(){
-        self.service.getHistoryAlamofire { success, error in
-            if let _success = success{
-                self.data = _success
-                self.delegate?.success()
-            }else{
-                self.delegate?.error()
-            }
-        }
-    }
+
 }

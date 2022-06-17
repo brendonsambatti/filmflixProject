@@ -24,12 +24,12 @@
 		0C7400822857C29700A23649 /* FavoriteScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C7400812857C29600A23649 /* FavoriteScreen.storyboard */; };
 		0C7400842857C8D400A23649 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7400832857C8D400A23649 /* HomeScreenViewController.swift */; };
 		0C7400862857C91400A23649 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7400852857C91400A23649 /* CustomTabBar.swift */; };
+		0C822826285904F9001B8360 /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C822825285904F9001B8360 /* HistoryService.swift */; };
 		57125B8C5849DF19AB74DE0C /* Pods_ProjetoFilmes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDCC54EFD08BA242B74A3A2 /* Pods_ProjetoFilmes.framework */; };
 		DABB48D02857FE89002CEB7A /* HomeScreenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABB48CE2857FE89002CEB7A /* HomeScreenTableViewCell.swift */; };
 		DABB48D12857FE89002CEB7A /* HomeScreenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DABB48CF2857FE89002CEB7A /* HomeScreenTableViewCell.xib */; };
 		DABB48D42857FFF5002CEB7A /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABB48D32857FFF5002CEB7A /* HomeScreenViewModel.swift */; };
 		DABB48D7285801AF002CEB7A /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABB48D6285801AF002CEB7A /* Items.swift */; };
-		DABB48DA285815C2002CEB7A /* MarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABB48D9285815C2002CEB7A /* MarvelAPI.swift */; };
 		DABB48DC28581D5D002CEB7A /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABB48DB28581D5D002CEB7A /* LaunchScreenViewController.swift */; };
 		DABB48DF28582731002CEB7A /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABB48DE28582731002CEB7A /* History.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +54,7 @@
 		0C7400812857C29600A23649 /* FavoriteScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoriteScreen.storyboard; sourceTree = "<group>"; };
 		0C7400832857C8D400A23649 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		0C7400852857C91400A23649 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		0C822825285904F9001B8360 /* HistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
 		4FDCC54EFD08BA242B74A3A2 /* Pods_ProjetoFilmes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoFilmes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61895FC58AE9048A9D84045F /* Pods-ProjetoFilmes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoFilmes.debug.xcconfig"; path = "Target Support Files/Pods-ProjetoFilmes/Pods-ProjetoFilmes.debug.xcconfig"; sourceTree = "<group>"; };
 		683B34B39E8EA7BDF883DB41 /* Pods-ProjetoFilmes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoFilmes.release.xcconfig"; path = "Target Support Files/Pods-ProjetoFilmes/Pods-ProjetoFilmes.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		DABB48CF2857FE89002CEB7A /* HomeScreenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenTableViewCell.xib; sourceTree = "<group>"; };
 		DABB48D32857FFF5002CEB7A /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		DABB48D6285801AF002CEB7A /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
-		DABB48D9285815C2002CEB7A /* MarvelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPI.swift; sourceTree = "<group>"; };
 		DABB48DB28581D5D002CEB7A /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		DABB48DE28582731002CEB7A /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -332,7 +332,7 @@
 		DABB48D8285815AA002CEB7A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				DABB48D9285815C2002CEB7A /* MarvelAPI.swift */,
+				0C822825285904F9001B8360 /* HistoryService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -472,8 +472,8 @@
 				DABB48D7285801AF002CEB7A /* Items.swift in Sources */,
 				0C74006F2857B0F500A23649 /* ForgotPasswordViewController.swift in Sources */,
 				DABB48DC28581D5D002CEB7A /* LaunchScreenViewController.swift in Sources */,
+				0C822826285904F9001B8360 /* HistoryService.swift in Sources */,
 				0C74004428577B1C00A23649 /* AppDelegate.swift in Sources */,
-				DABB48DA285815C2002CEB7A /* MarvelAPI.swift in Sources */,
 				DABB48DF28582731002CEB7A /* History.swift in Sources */,
 				0C7400862857C91400A23649 /* CustomTabBar.swift in Sources */,
 				0C74005B28577B5600A23649 /* ViewModel.swift in Sources */,

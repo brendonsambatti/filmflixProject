@@ -17,7 +17,6 @@ class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
         self.configTableView()
         self.homeScreenViewModel.fetchHistory()
-//        print(MarvelApi.filterHeroes(completion: <#T##([String?], Error?) -> Void#>))
     }
     
     private func configTableView(){

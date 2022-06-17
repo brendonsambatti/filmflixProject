@@ -30,8 +30,8 @@ class HomeScreenTableViewCell: UITableViewCell {
     
     func setupCell(history:History){
 //        self.elementImageView.image = history.
-        self.label1.text = history.title
-        self.label2.text = String(history.popularity)
+//        self.label1.text = history.title
+//        self.label2.text = String(history.popularity)
 //        self.button1 = history.voteAverage
     }
     
