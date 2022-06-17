@@ -17,7 +17,7 @@ class HomeScreenViewModel{
     public func fetchHistory(){
         self.service.getHistoryAlamofire { success, error in
             print(success)
-            History.init(adult: self.adult, backdropPath: self.backdropPath, belongsToCollection: <#T##JSONNull?#>, budget: <#T##Int?#>, genres: <#T##[Genre]?#>, homepage: <#T##String?#>, id: <#T##Int?#>, imdbID: <#T##String?#>, originalLanguage: <#T##String?#>, originalTitle: <#T##String?#>, overview: <#T##String?#>, popularity: <#T##Double?#>, posterPath: <#T##String?#>, productionCompanies: <#T##[ProductionCompany]?#>, productionCountries: <#T##[ProductionCountry]?#>, releaseDate: <#T##String?#>, revenue: <#T##Int?#>, runtime: <#T##Int?#>, spokenLanguages: <#T##[SpokenLanguage]?#>, status: <#T##String?#>, tagline: <#T##String?#>, title: <#T##String?#>, video: <#T##Bool?#>, voteAverage: <#T##Double?#>, voteCount: <#T##Int?#>)
+//            History.init(adult: self.adult, backdropPath: self.backdropPath, belongsToCollection: <#T##JSONNull?#>, budget: <#T##Int?#>, genres: <#T##[Genre]?#>, homepage: <#T##String?#>, id: <#T##Int?#>, imdbID: <#T##String?#>, originalLanguage: <#T##String?#>, originalTitle: <#T##String?#>, overview: <#T##String?#>, popularity: <#T##Double?#>, posterPath: <#T##String?#>, productionCompanies: <#T##[ProductionCompany]?#>, productionCountries: <#T##[ProductionCountry]?#>, releaseDate: <#T##String?#>, revenue: <#T##Int?#>, runtime: <#T##Int?#>, spokenLanguages: <#T##[SpokenLanguage]?#>, status: <#T##String?#>, tagline: <#T##String?#>, title: <#T##String?#>, video: <#T##Bool?#>, voteAverage: <#T##Double?#>, voteCount: <#T##Int?#>)
         }
     }
     
