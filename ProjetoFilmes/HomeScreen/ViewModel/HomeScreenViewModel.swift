@@ -8,38 +8,45 @@
 import Foundation
 import UIKit
 
-class HomeScreenViewModel{
-    var adult:Bool?
-    var backdropPath:String?
+protocol HomeScreenViewModelDelegate:AnyObject{
+    func success()
+    func error()
+}
 
+class HomeScreenViewModel{
+    
     private let service:HistoryService = HistoryService()
+    var data:History?
     
-    public func fetchHistory(){
-        self.service.getHistoryAlamofire { success, error in
-            print(success)
-//            History.init(adult: self.adult, backdropPath: self.backdropPath, belongsToCollection: <#T##JSONNull?#>, budget: <#T##Int?#>, genres: <#T##[Genre]?#>, homepage: <#T##String?#>, id: <#T##Int?#>, imdbID: <#T##String?#>, originalLanguage: <#T##String?#>, originalTitle: <#T##String?#>, overview: <#T##String?#>, popularity: <#T##Double?#>, posterPath: <#T##String?#>, productionCompanies: <#T##[ProductionCompany]?#>, productionCountries: <#T##[ProductionCountry]?#>, releaseDate: <#T##String?#>, revenue: <#T##Int?#>, runtime: <#T##Int?#>, spokenLanguages: <#T##[SpokenLanguage]?#>, status: <#T##String?#>, tagline: <#T##String?#>, title: <#T##String?#>, video: <#T##Bool?#>, voteAverage: <#T##Double?#>, voteCount: <#T##Int?#>)
-        }
+    
+    public var countElement:Int{
+//        return self.data?.productionCompanies?.count ?? 0
+        return self.data?.list?.count ?? 0
     }
-    
-    
-    
-    var data = ["", ""]
-        
-    func appendData(){
-        
+    public func loadCurrentData(indexPath:IndexPath)-> HistoryList{
+//        return data?.productionCompanies?[indexPath.row] ?? ProductionCompany()
+        return data?.list?[indexPath.row] ?? HistoryList()
     }
-    
-    public var numberOfRows:Int{
-        return data.count
-    }
-    
-//    public func cellForRow(indexPath:IndexPath)-> MarvelApi{
-//        return data?.productionCompanies[indexPath.row] ?? History()
-        
-//    }
     
     public var heightForRow:CGFloat{
         150
     }
 
+    
+    private weak var delegate:HomeScreenViewModelDelegate?
+    
+    public func delegate(delegate:HomeScreenViewModelDelegate?){
+        self.delegate = delegate
+    }
+    
+    public func fetchHistory(){
+        self.service.getHistoryAlamofire { success, error in
+            if let _success  = success{
+                self.data = success
+                self.delegate?.success()
+            }else{
+                self.delegate?.error()
+            }
+        }
+    }
 }

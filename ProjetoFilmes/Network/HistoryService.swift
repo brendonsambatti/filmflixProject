@@ -21,9 +21,14 @@ protocol HistoryServiceDelegate: GenericService{
     func getHistoryAlamofire(completion: @escaping completion<History?>)
 }
 
+var value:Int = 1
+
 class HistoryService:HistoryServiceDelegate{
     func getHistoryAlamofire(completion: @escaping completion<History?>) {
-        let url:String = "https://api.themoviedb.org/3/movie/550?api_key=efc14dccffb82992aeddde213a16378a"
+        while (value != 900) {
+            value = value + 1
+        }
+        let url:String = "https://api.themoviedb.org/3/movie/\(value)?api_key=efc14dccffb82992aeddde213a16378a&language=pt-BR"
         AF.request(url, method: .get).responseDecodable(of: History.self){ response in
             debugPrint(response)
             switch response.result{
@@ -36,6 +41,4 @@ class HistoryService:HistoryServiceDelegate{
             }
         }
     }
-    
-    
 }

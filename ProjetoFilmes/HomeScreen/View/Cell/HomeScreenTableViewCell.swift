@@ -28,11 +28,13 @@ class HomeScreenTableViewCell: UITableViewCell {
 
     }
     
-    func setupCell(history:History){
-//        self.elementImageView.image = history.
-//        self.label1.text = history.title
-//        self.label2.text = String(history.popularity)
-//        self.button1 = history.voteAverage
+    func setupCell(data:HistoryList){
+//        self.elementImageView.image = UIImage(named: data.logoPath ?? "image")
+//        self.label1.text = data.name
+//        self.label2.text = data.originCountry
+        self.elementImageView.image = UIImage(named: data.posterPath ?? "")
+        self.label1.text = data.title
+        self.label2.text = String(data.voteAverage ?? 0.0)
     }
     
 }

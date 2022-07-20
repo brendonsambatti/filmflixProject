@@ -16,6 +16,20 @@ struct History: Codable {
     var homepage: String?
     var id: Int?
     var imdbID, originalLanguage, originalTitle, overview: String?
+    var list: [HistoryList]?
+
+    enum CodingKeys: String, CodingKey {
+        case adult
+        case backdropPath = "backdrop_path"
+        case belongsToCollection = "belongs_to_collection"
+        case budget, genres, homepage, id
+        case imdbID = "imdb_id"
+        case originalLanguage = "original_language"
+        case originalTitle = "original_title"
+        case overview
+    }
+}
+struct HistoryList: Codable {
     var popularity: Double?
     var posterPath: String?
     var productionCompanies: [ProductionCompany]?
@@ -29,14 +43,7 @@ struct History: Codable {
     var voteCount: Int?
 
     enum CodingKeys: String, CodingKey {
-        case adult
-        case backdropPath = "backdrop_path"
-        case belongsToCollection = "belongs_to_collection"
-        case budget, genres, homepage, id
-        case imdbID = "imdb_id"
-        case originalLanguage = "original_language"
-        case originalTitle = "original_title"
-        case overview, popularity
+        case popularity
         case posterPath = "poster_path"
         case productionCompanies = "production_companies"
         case productionCountries = "production_countries"

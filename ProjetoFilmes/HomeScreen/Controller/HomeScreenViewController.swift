@@ -17,6 +17,7 @@ class HomeScreenViewController: UIViewController {
         super.viewDidLoad()
         self.configTableView()
         self.homeScreenViewModel.fetchHistory()
+        self.homeScreenViewModel.delegate(delegate: self)
     }
     
     private func configTableView(){
@@ -24,17 +25,16 @@ class HomeScreenViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.separatorStyle = .singleLine
         self.tableView.register(HomeScreenTableViewCell.nib(), forCellReuseIdentifier: HomeScreenTableViewCell.identifier)
-        self.homeScreenViewModel.appendData()
     }
 
 }
 extension HomeScreenViewController:UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         Int(self.homeScreenViewModel.numberOfRows)
+        self.homeScreenViewModel.countElement
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeScreenTableViewCell.identifier, for: indexPath) as? HomeScreenTableViewCell
-//        cell?.setupCell(history: self.homeScreenViewModel.cellForRow(indexPath: indexPath))
+        cell?.setupCell(data: self.homeScreenViewModel.loadCurrentData(indexPath: indexPath))
         return cell ?? UITableViewCell()
     }
     
@@ -43,3 +43,14 @@ extension HomeScreenViewController:UITableViewDelegate, UITableViewDataSource{
     }
 }
 
+extension HomeScreenViewController:HomeScreenViewModelDelegate{
+    func success() {
+        self.configTableView()
+        self.tableView.reloadData()
+    }
+    
+    func error() {
+        print(#function)
+    }
+    
+}
